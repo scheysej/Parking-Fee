@@ -1,0 +1,30 @@
+fun main(args: Array<String>) {
+    var hours = readLine()!!.toInt()
+    var total: Double = 0.0
+    
+    if(hours > 23){
+        while(hours > 23){
+            total+=15
+            hours-=24
+        }
+        while(hours > 0){
+            total+=0.5
+            hours--
+        }
+    }
+    else{
+        while(hours > 0){
+            if(hours in 6..23){
+                total+=0.5
+                hours--
+            }
+            else if(hours in 0..5){
+                total+=1
+                hours--
+            }
+        }
+    }
+
+    print(total)
+
+}
